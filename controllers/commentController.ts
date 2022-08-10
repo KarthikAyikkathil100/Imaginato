@@ -21,7 +21,7 @@ export const postComment = async (req: any, res:any) => {
             error: err
         })
     } catch(e) {
-        res.send({
+        res.status(500).send({
             error: "Error while adding comment"
         })
     }
@@ -42,6 +42,8 @@ export const getBlogComments = async (req:any, res:any) => {
             data: finalRes,
         })
     } catch (e) {
-
+        res.status(500).send({
+            error: "Error while fetching comment"
+        })
     }
 }

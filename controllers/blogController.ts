@@ -29,7 +29,7 @@ export const createBlog = async (req: any, res: any) => {
         data: new_doc[0],
       });
     } catch (e) {
-      res.send({
+      res.status(500).send({
         error: "Error while creating blog",
       });
     }
@@ -85,7 +85,7 @@ export const getBlogDetail = async (req: any, res:any) => {
         data: (result as [any])[0],
       });
     } catch (e) {
-      res.send({
+      res.status(500).send({
           error: "error while fetching the blog content"
       })
     }
